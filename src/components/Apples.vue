@@ -1,15 +1,17 @@
 <script setup>
-import {ref} from 'vue'
-let apples= ref(5)
-const apple = ref(null)
+import {onMounted, ref} from 'vue'
+import * as d3 from 'd3'
+
 let myTopValue = ref(0)
-let myLocalStatus = ref(false)
+let svg = ref()
 function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function randomLeft(){
     console.log("randomLeft")
+
+
     if(myTopValue.value < 40){
         return randomInt(920, 950)
     }else if (myTopValue.value < 90){
@@ -31,19 +33,44 @@ function randomTop(min,max){
     return myTopValue.value
 }
 
-
-
-function PickUp(){
-    console.log("PickUp");
-    myLocalStatus.value = true
+function create(){
+  const imgUrl = new URL("../assets/simple-apple.svg", import.meta.url).href
+  console.log(imgUrl)
+  svg = d3.select("#deneme").append("svg:image")
+    .attr("xlink:href", imgUrl)
+	.attr("width", 40)
+    .attr("height", 40)
+    .attr("x", randomLeft())
+    .attr("y",randomTop(30,340));
+   
 }
+
+function triggerTransitionDelay(){
+	svg.transition().attr('y',850).duration(1000).delay(d3.randomInt(1000,2000));
+  //pickRandomPosition()
+}
+
+onMounted(() => {
+  for(let i = 0; i < 10; i++){
+    create()
+  }
+  //create()
+  console.log("mounted Apples")
+})
+
+
 </script>
 
 <template>
-    <div v-for="(element,index) in apples">
-        <img v-if="myLocalStatus" class="red-apple" src="@/assets/simple-apple.svg" :id="index" alt="Apple" width="48" height="48" @click="PickUp()" :style="{bottom:`30px`,left:`${randomLeft()}px`} ">
-        <img v-else class="red-apple" src="@/assets/simple-apple.svg" :id="index" alt="Apple" width="48" height="48" @click="PickUp()" :style="{top:`${randomTop(30,340)}px`,left:`${randomLeft()}px`} ">
+    <div >
+        <svg id="deneme" class="red-apple" @click="triggerTransitionDelay()"> </svg>
     </div>
+
+
+    <!-- <div v-for="(element,index) in apples">
+        <img v-if="myLocalStatus" class="red-apple" src="@/assets/simple-apple.svg" :id="index" alt="Apple" width="48" height="48" @click="PickUp()" :style="{bottom:`30px`,left:`${randomLeft()}px`} ">
+        <img ref="apple" class="red-apple" src="@/assets/simple-apple.svg" :id="index" alt="Apple" width="48" height="48" @click="PickUp()" :style="{top:`${randomTop(30,340)}px`,left:`${randomLeft()}px`} ">
+    </div> -->
 
    
 
@@ -52,6 +79,9 @@ function PickUp(){
 
 <style scoped>
 .red-apple{
+    left: 0;
+    width: 100%;
+    height: 100%;
     position: absolute;
     z-index: 1;
 }

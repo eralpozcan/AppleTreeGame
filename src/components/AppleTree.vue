@@ -1,20 +1,19 @@
 <script setup>
 import { ref } from 'vue'
-
 const disabled = ref(false)
-const apples = ref(5)
+
 function warnDisabled() {
   disabled.value = true
   setTimeout(() => {
     disabled.value = false
-  }, 1500)
+  }, 3000)
 }
 
 </script>
 
 <template>
     <div :class="{ shake: disabled }">
-        <img src="@/assets/appletree.svg" width="800" height="800" alt="Apple Tree" @click="warnDisabled"/>
+        <img id="test" src="@/assets/appletree.svg" width="800" height="800" alt="Apple Tree" @click="warnDisabled"/>
     </div>
 </template>
 
