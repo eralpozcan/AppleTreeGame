@@ -3,7 +3,7 @@ import {onMounted, ref} from 'vue'
 import * as d3 from 'd3'
 
 let myTopValue = ref(0)
-let svg = ref()
+let svg = ref([])
 function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -36,17 +36,25 @@ function randomTop(min,max){
 function create(){
   const imgUrl = new URL("../assets/simple-apple.svg", import.meta.url).href
   console.log(imgUrl)
-  svg = d3.select("#deneme").append("svg:image")
+  let abc = d3.select("#deneme").append("svg:image")
     .attr("xlink:href", imgUrl)
 	.attr("width", 40)
     .attr("height", 40)
     .attr("x", randomLeft())
     .attr("y",randomTop(30,340));
+
+    svg.value.push(abc)
    
 }
 
 function triggerTransitionDelay(){
-	svg.transition().attr('y',850).duration(1000).delay(d3.randomInt(1000,2000));
+    for(let i=0;i<svg.value.length;i++){
+        svg.value[i].transition()
+        .duration(1000)
+        .attr("y", 850)
+        .duration(1000).delay(d3.randomInt(1000,2000))
+    }
+
   //pickRandomPosition()
 }
 
