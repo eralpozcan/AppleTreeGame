@@ -55,7 +55,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <svg id="apples" class="red-apple" :class="{ shake: appleStore.shacking }"> </svg>
+    <svg id="apples" class="red-apple" :class="{ shake: appleStore.shackingStatus }"> </svg>
 </template>
 
 

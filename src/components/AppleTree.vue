@@ -14,7 +14,7 @@ function shakeTree() {
 </script>
 
 <template>
-    <div :class="{ shake: appleStore.shacking }">
+    <div :class="{ shake: appleStore.shackingStatus }">
         <img src="@/assets/appletree.svg" width="800" height="800" alt="Apple Tree" @click="shakeTree"/>
     </div>
 </template>

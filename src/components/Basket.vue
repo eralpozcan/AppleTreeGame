@@ -4,20 +4,9 @@ import { onMounted } from 'vue';
 
 const appleStore = useAppleTreeStore()
 
-function xPos(i){
-    if(i < 5){
-        return i * 25
-    }else if(i < 10){
-        return (i - 5) * 25
-    }
-    
-}
-
-
 
 onMounted(() => {
-
-  appleStore.BasketApple()
+  appleStore.basketApple()
 })
 
 
