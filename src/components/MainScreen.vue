@@ -1,11 +1,20 @@
 <script setup>
+import { useAppleTreeStore } from '@/stores/index'
+import router from '../router';
+const appleStore = useAppleTreeStore()
+
+function playNow() {
+    appleStore.playing = true
+    router.push({name:'game'})
+}
+
 </script>
 
 
 <template>
     <main class="main-screen">
         <h1>Play to Apple Tree Game</h1>
-        <RouterLink to="/game"><button class="home-button"> Play Button</button></RouterLink>
+        <button class="home-button" @click="playNow()"> Play Button</button>
     </main>
 </template>
 
