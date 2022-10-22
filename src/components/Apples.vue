@@ -1,17 +1,17 @@
 <script setup>
 import {onMounted, ref} from 'vue'
 import * as d3 from 'd3'
+import { useAppleTreeStore } from '@/stores/index'
+const appleStore = useAppleTreeStore()
 
-let myTopValue = ref(0)
-let svg = ref([])
+let myTopValue = ref(200)
+
+
 function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function randomLeft(){
-    console.log("randomLeft")
-
-
+function randomLeft(i){
     if(myTopValue.value < 40){
         return randomInt(920, 950)
     }else if (myTopValue.value < 90){
@@ -24,7 +24,9 @@ function randomLeft(){
         return randomInt(650, 1250)
     }else if (myTopValue.value < 180){ 
         return randomInt(620, 1220)
-    }
+    }else 
+        return randomInt(850, 1050)
+    
 }
 
 function randomTop(min,max){
@@ -33,60 +35,33 @@ function randomTop(min,max){
     return myTopValue.value
 }
 
-function create(){
+function create(i){
   const imgUrl = new URL("../assets/simple-apple.svg", import.meta.url).href
-  console.log(imgUrl)
-  let abc = d3.select("#deneme").append("svg:image")
+  let abc = d3.select("#apples").append("svg:image")
     .attr("xlink:href", imgUrl)
 	.attr("width", 40)
     .attr("height", 40)
-    .attr("x", randomLeft())
+    .attr("x", randomLeft(i))
     .attr("y",randomTop(30,340));
-
-    svg.value.push(abc)
-   
-}
-
-function triggerTransitionDelay(){
-    for(let i=0;i<svg.value.length;i++){
-        svg.value[i].transition()
-        .duration(1000)
-        .attr("y", 850)
-        .duration(1000).delay(d3.randomInt(1000,2000))
-    }
-
-  //pickRandomPosition()
+    appleStore.svg.push(abc)
 }
 
 onMounted(() => {
   for(let i = 0; i < 10; i++){
-    create()
+    create(i)
   }
-  //create()
-  console.log("mounted Apples")
 })
-
 
 </script>
 
 <template>
-    <div >
-        <svg id="deneme" class="red-apple" @click="triggerTransitionDelay()"> </svg>
-    </div>
-
-
-    <!-- <div v-for="(element,index) in apples">
-        <img v-if="myLocalStatus" class="red-apple" src="@/assets/simple-apple.svg" :id="index" alt="Apple" width="48" height="48" @click="PickUp()" :style="{bottom:`30px`,left:`${randomLeft()}px`} ">
-        <img ref="apple" class="red-apple" src="@/assets/simple-apple.svg" :id="index" alt="Apple" width="48" height="48" @click="PickUp()" :style="{top:`${randomTop(30,340)}px`,left:`${randomLeft()}px`} ">
-    </div> -->
-
-   
-
+    <svg id="apples" class="red-apple"> </svg>
 </template>
 
 
 <style scoped>
 .red-apple{
+    pointer-events:none;
     left: 0;
     width: 100%;
     height: 100%;

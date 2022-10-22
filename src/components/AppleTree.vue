@@ -1,19 +1,22 @@
 <script setup>
 import { ref } from 'vue'
-const disabled = ref(false)
+import { useAppleTreeStore } from '@/stores/index'
+
+const appleStore = useAppleTreeStore()
+
 
 function warnDisabled() {
-  disabled.value = true
+  appleStore.shacking = true
   setTimeout(() => {
-    disabled.value = false
+    appleStore.DropDownApples()
   }, 3000)
 }
 
 </script>
 
 <template>
-    <div :class="{ shake: disabled }">
-        <img id="test" src="@/assets/appletree.svg" width="800" height="800" alt="Apple Tree" @click="warnDisabled"/>
+    <div :class="{ shake: appleStore.shacking }">
+        <img src="@/assets/appletree.svg" width="800" height="800" alt="Apple Tree" @click="warnDisabled"/>
     </div>
 </template>
 
