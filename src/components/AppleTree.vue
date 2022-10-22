@@ -1,11 +1,10 @@
 <script setup>
-import { ref } from 'vue'
 import { useAppleTreeStore } from '@/stores/index'
 
 const appleStore = useAppleTreeStore()
 
 
-function warnDisabled() {
+function shakeTree() {
   appleStore.shacking = true
   setTimeout(() => {
     appleStore.DropDownApples()
@@ -16,7 +15,7 @@ function warnDisabled() {
 
 <template>
     <div :class="{ shake: appleStore.shacking }">
-        <img src="@/assets/appletree.svg" width="800" height="800" alt="Apple Tree" @click="warnDisabled"/>
+        <img src="@/assets/appletree.svg" width="800" height="800" alt="Apple Tree" @click="shakeTree"/>
     </div>
 </template>
 
