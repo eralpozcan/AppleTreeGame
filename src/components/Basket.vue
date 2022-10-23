@@ -1,20 +1,12 @@
 <script setup>
 import { useAppleTreeStore } from '@/stores/index'
-import { onMounted } from 'vue';
-
 const appleStore = useAppleTreeStore()
-
-
-onMounted(() => {
-  appleStore.basketApple()
-})
-
 
 </script>
 
 <template>
-    <div class="basket">
-        <svg id="basket_apples" class="basket_apple"> </svg>
+    <div class="basket" @contextmenu.prevent>
+        <svg v-show="appleStore.appleIsGroundStatus" id="basket_apples" class="basket_apple"> </svg>
         <img src="@/assets/basket.svg" width="200" height="200" alt="Apple Tree"/>
     </div>
 </template>
