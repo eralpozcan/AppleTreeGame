@@ -2,13 +2,13 @@ import { beforeEach, describe, it, expect } from "vitest";
 
 import { mount } from "@vue/test-utils";
 import { createPinia } from "pinia";
-import Basket from "../Basket.vue";
+import Apples from "../components/Apples.vue";
 
-describe("Basket.vue", () => {
+describe("Apples", () => {
   let wrapper = null;
   beforeEach(() => {
     const pinia = createPinia();
-    wrapper = mount(Basket, {
+    wrapper = mount(Apples, {
       global: {
         plugins: [pinia],
       },

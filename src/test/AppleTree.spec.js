@@ -2,7 +2,7 @@ import { beforeEach, describe, it, expect } from "vitest";
 
 import { mount } from "@vue/test-utils";
 import { createPinia } from "pinia";
-import appleTree from "../AppleTree.vue";
+import appleTree from "../components/AppleTree.vue";
 
 describe("AppleTree.vue", () => {
   let wrapper = null;
