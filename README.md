@@ -32,7 +32,7 @@ Features made outside of these desired conditions are explained in the extras se
  - The docker file was written and actively shared on [Docker Hub](https://hub.docker.com/r/eralpozcan/appletreegame).
 
 
-### Tech Stack
+### ✨ Tech Stack
  - [Vite](Vite)
  - [Pinia](https://pinia.vuejs.org/)
  - [D3.js](https://d3js.org/)

@@ -37,8 +37,8 @@ export const useAppleTreeStore = defineStore("appleTree", {
     },
     // xPos for basket
     xPos(i) {
-      let minBasketX = 22; 
-      let offset = 25;
+      const minBasketX = 22; 
+      const offset = 25;
       if (i < 5) {
         return minBasketX + i * offset;
       }  
@@ -49,8 +49,8 @@ export const useAppleTreeStore = defineStore("appleTree", {
     },
     // yPos for basket
     yPos(i) {
-      let basketFirstLine = 52;
-      let basketSecondLine = 30;
+      const basketFirstLine = 52;
+      const basketSecondLine = 30;
       if (i < 5) {
         return basketFirstLine;
       } else if (i < 10) {
