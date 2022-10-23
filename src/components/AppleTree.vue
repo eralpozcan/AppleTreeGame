@@ -8,7 +8,7 @@ function shakeTree() {
   appleStore.setShackingStatus(true)
   setTimeout(() => {
     appleStore.dropDownApples()
-  }, 3000)
+  }, 100)
 }
 
 </script>
