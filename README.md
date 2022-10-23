@@ -39,8 +39,9 @@ This project is a mini-game that lets you collect apples from a tree. Pinia is u
 *This section contains features made outside of the main tasks.*
  - Custom 404 error [page](https://apple-tree-game.vercel.app/test-404).
  - Basic unit tests with [Vitest](https://vitest.dev/).
- - Static analysis platform DeepSource is integrated. Various code quality issues have been fixed. It can be checked [here](https://deepsource.io/gh/Eralpozcan/AppleTreeGame).
  - Dockerfile is created and the container image is shared on [DockerHub](https://hub.docker.com/r/eralpozcan/appletreegame).
+ - Code analysis platform DeepSource is integrated. Code quality issues have been fixed. Check on [DeepSource](https://deepsource.io/gh/Eralpozcan/AppleTreeGame).
+
 
 ### 💻 **Tech Stack**
  - [Vite](https://vitejs.dev/)
