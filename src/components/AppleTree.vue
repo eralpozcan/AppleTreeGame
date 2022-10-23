@@ -7,14 +7,14 @@ const appleStore = useAppleTreeStore()
 function shakeTree() {
   appleStore.shacking = true
   setTimeout(() => {
-    appleStore.DropDownApples()
+    appleStore.dropDownApples()
   }, 3000)
 }
 
 </script>
 
 <template>
-    <div :class="{ shake: appleStore.shackingStatus }">
+    <div :class="{ shake: appleStore.shackingStatus }" @contextmenu.prevent>
         <img src="@/assets/appletree.svg" width="800" height="800" alt="Apple Tree" @click="shakeTree"/>
     </div>
 </template>
