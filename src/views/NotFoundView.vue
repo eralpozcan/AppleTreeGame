@@ -21,9 +21,3 @@ function GoBackHome() {
     </section>    
 </template>
 
-
-<style scoped>
-.router{
-    text-decoration: none !important;
-}
-</style>
