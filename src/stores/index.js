@@ -37,21 +37,26 @@ export const useAppleTreeStore = defineStore("appleTree", {
     },
     // xPos for basket
     xPos(i) {
+      let minBasketX = 22; 
+      let offset = 25;
       if (i < 5) {
-        return 22 + i * 25;
+        return minBasketX + i * offset;
       }  
       if (i < 10) {
-        return 22 + (i - 5) * 25;
+        return minBasketX + (i - 5) * offset;
       }
+      return minBasketX + (i - 5) * offset;
     },
     // yPos for basket
     yPos(i) {
+      let basketFirstLine = 52;
+      let basketSecondLine = 30;
       if (i < 5) {
-        return 52;
+        return basketFirstLine;
       } else if (i < 10) {
-        return 30;
+        return basketSecondLine;
       } 
-      return 40;
+      return (basketFirstLine + basketSecondLine) / 2;
     },
 
     // Tree Random Seed xPos

@@ -28,7 +28,7 @@ Features made outside of these desired conditions are explained in the extras se
 #### :ballot_box_with_check: **Extras**
  - 404 Error Page
  - Write basic unit test with [Vitest](https://vitest.dev/)
- - Static analysis platform DeepSource is connected. And various code quality issues have been fixed.
+ - Static analysis platform DeepSource is connected. And various code quality issues have been fixed. It can be checked here [DeepSource](https://deepsource.io/gh/Eralpozcan/AppleTreeGame)
  - The docker file was written and actively shared on [Docker Hub](https://hub.docker.com/r/eralpozcan/appletreegame).
 
 
