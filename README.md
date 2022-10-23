@@ -40,7 +40,7 @@ This project is a mini-game that lets you collect apples from a tree. Pinia is u
  - Custom 404 error [page](https://apple-tree-game.vercel.app/test-404).
  - Basic unit tests with [Vitest](https://vitest.dev/).
  - Dockerfile is created and the container image is shared on [DockerHub](https://hub.docker.com/r/eralpozcan/appletreegame).
- - Code analysis platform DeepSource is integrated. Code quality issues have been fixed. Check on [DeepSource](https://deepsource.io/gh/Eralpozcan/AppleTreeGame).
+ - Code analysis platform DeepSource is integrated. Quality issues have been fixed. Check on [DeepSource](https://deepsource.io/gh/Eralpozcan/AppleTreeGame).
 
 
 ### 💻 **Tech Stack**
@@ -70,3 +70,5 @@ npm run build                                               // Build the project
 docker run --rm -d -p 80:80 --name apple-tree-game eralpozcan/appletreegame
 ```
 > After this command, the container will run on [localhost](http://localhost/).
+
+<p align="right"><img src="https://komarev.com/ghpvc/?username=EralpozcanAppleTreeGame&style=flat&label=Views&color=blue" alt="View Counter"></a></p>
