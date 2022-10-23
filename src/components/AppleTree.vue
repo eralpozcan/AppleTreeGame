@@ -5,7 +5,7 @@ const appleStore = useAppleTreeStore()
 
 
 function shakeTree() {
-  appleStore.shacking = true
+  appleStore.setShackingStatus(true)
   setTimeout(() => {
     appleStore.dropDownApples()
   }, 3000)

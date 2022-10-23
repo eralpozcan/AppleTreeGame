@@ -24,6 +24,14 @@ export const useAppleTreeStore = defineStore("appleTree", {
       this.playing = status;
       sessionStorage.setItem("playing", status);
     },
+    setShackingStatus(status) {
+      this.shacking = status;
+      sessionStorage.setItem("shacking", status);
+    },
+    setAppleIsGroundStatus(status) {
+      this.appleIsGround = status;
+      sessionStorage.setItem("appleIsGround", status);
+    },
     randomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     },
@@ -112,7 +120,7 @@ export const useAppleTreeStore = defineStore("appleTree", {
           .delay(d3.randomInt(1000, 2000));
       }
       setTimeout(() => {
-        this.appleIsGround = true;
+        this.setAppleIsGroundStatus(true);
       }, 3000);
     },
   },
