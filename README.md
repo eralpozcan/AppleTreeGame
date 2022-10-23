@@ -10,7 +10,7 @@
 </div>
 
 <p align="center">
-<img src="/assets/readme/readmeproject.gif" alt="Apple Tree Game">
+<img src="https://github.com/Eralpozcan/AppleTreeGame/blob/main/src/assets/readme/readmeproject.gif" alt="Apple Tree Game">
 </p>
 
 
@@ -46,6 +46,23 @@ Features made outside of these desired conditions are explained in the extras se
  - [Vitest](https://vitest.dev/)
  - [Docker](https://www.docker.com/)
  - [DeepSource](https://deepsource.io/)
+
+
+<details><summary><strong>Project Showcase Images</strong></summary>
+<p align="center">
+<img src="https://github.com/Eralpozcan/AppleTreeGame/blob/main/src/assets/readme/readmeproject.gif" alt="Apple Tree Game">
+</p>
+
+<p align="center">
+<img src="https://github.com/Eralpozcan/AppleTreeGame/blob/main/src/assets/readme/readme404.png" alt="404 Page" width="600">
+</p>
+
+<p align="center">
+<img src="https://github.com/Eralpozcan/AppleTreeGame/blob/main/src/assets/readme/unittestreadme.png" alt="404 Page">
+</p>
+
+</details>
+
 
 
 
