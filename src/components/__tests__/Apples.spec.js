@@ -1,20 +1,20 @@
-import { beforeEach, describe, it, expect} from 'vitest'
+import { beforeEach, describe, it, expect } from "vitest";
 
-import { mount } from '@vue/test-utils'
-import { createPinia } from 'pinia'
-import Apples from '../Apples.vue'
+import { mount } from "@vue/test-utils";
+import { createPinia } from "pinia";
+import Apples from "../Apples.vue";
 
-describe('Apples', () => {
-  let wrapper = null
+describe("Apples", () => {
+  let wrapper = null;
   beforeEach(() => {
-      const pinia = createPinia()
-      wrapper = mount(Apples, {
+    const pinia = createPinia();
+    wrapper = mount(Apples, {
       global: {
-          plugins: [pinia]
-      }
-      })
-  })
-  it('renders properly', () => {
-      expect(wrapper.exists()).toBe(true)
-  })
-})
+        plugins: [pinia],
+      },
+    });
+  });
+  it("renders properly", () => {
+    expect(wrapper.exists()).toBe(true);
+  });
+});
