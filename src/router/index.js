@@ -17,6 +17,11 @@ const router = createRouter({
         sessionStorage.getItem("playing") === "true" ? next() : next("/");
       },
     },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "not-found",
+      component: () => import("../views/NotFoundView.vue"),
+    }
   ],
 });
 
