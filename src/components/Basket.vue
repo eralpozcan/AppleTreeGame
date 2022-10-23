@@ -1,5 +1,5 @@
 <script setup>
-import { useAppleTreeStore } from "@/stores/index";
+import { useAppleTreeStore } from "../stores/index";
 const appleStore = useAppleTreeStore();
 </script>
 
@@ -10,7 +10,7 @@ const appleStore = useAppleTreeStore();
       id="basket_apples"
       class="basket_apple"
     ></svg>
-    <img src="@/assets/basket.svg" width="200" height="200" alt="Apple Tree" />
+    <img src="../assets/basket.svg" width="200" height="200" alt="Apple Tree" />
   </div>
 </template>
 

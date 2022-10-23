@@ -1,6 +1,6 @@
 import { createPinia,setActivePinia } from "pinia";
 import { beforeEach,describe,expect,test } from "vitest";
-import { useAppleTreeStore } from "@/stores/index.js";
+import { useAppleTreeStore } from "../stores/index.js";
 
 describe("Store", () => {
     beforeEach(() => {

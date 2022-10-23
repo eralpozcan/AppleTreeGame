@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from "vue";
-import { useAppleTreeStore } from "@/stores/index";
+import { useAppleTreeStore } from "../stores/index";
 const appleStore = useAppleTreeStore();
 
 onMounted(() => {

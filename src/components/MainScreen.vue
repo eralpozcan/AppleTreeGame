@@ -1,5 +1,5 @@
 <script setup>
-import { useAppleTreeStore } from "@/stores/index";
+import { useAppleTreeStore } from "../stores/index";
 import router from "../router";
 const appleStore = useAppleTreeStore();
 
