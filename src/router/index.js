@@ -12,7 +12,10 @@ const router = createRouter({
     {
       path: '/game',
       name: 'game',
-      component: () => import('../views/GameView.vue')
+      component: () => import('../views/GameView.vue'),
+      beforeEnter: (to, from, next) => {
+        sessionStorage.getItem('playing') === 'true' ? next() : next('/')
+      }
     }
   ]
 })
