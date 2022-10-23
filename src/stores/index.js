@@ -50,9 +50,8 @@ export const useAppleTreeStore = defineStore("appleTree", {
         return 52;
       } else if (i < 10) {
         return 30;
-      } else {
-        return 40;
-      }
+      } 
+      return 40;
     },
 
     // Tree Random Seed xPos
@@ -71,7 +70,8 @@ export const useAppleTreeStore = defineStore("appleTree", {
       }
       if (this.yPosValue[i] < 285) {
         return this.randomInt(650, 1250);
-      } else {
+      } 
+      if(this.yPosValue[i] < 340) {
         return this.randomInt(750, 1150);
       }
     },
