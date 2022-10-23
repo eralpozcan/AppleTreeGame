@@ -39,7 +39,8 @@ export const useAppleTreeStore = defineStore("appleTree", {
     xPos(i) {
       if (i < 5) {
         return 22 + i * 25;
-      } else if (i < 10) {
+      }  
+      if (i < 10) {
         return 22 + (i - 5) * 25;
       }
     },
@@ -76,8 +77,8 @@ export const useAppleTreeStore = defineStore("appleTree", {
     },
     // Tree Random Seed yPos
     treeYPos(i) {
-      let max = 340;
-      let min = 30;
+      const max = 340;
+      const min = 30;
       this.yPosValue.push(this.randomInt(min, max));
       return this.yPosValue[i];
     },
@@ -85,7 +86,7 @@ export const useAppleTreeStore = defineStore("appleTree", {
       const imgUrl = new URL("../assets/simple-apple.svg", import.meta.url)
         .href;
       for (let i = 0; i < 15; i++) {
-        let tree_apple = d3
+        const tree_apple = d3
           .select("#apples")
           .append("svg:image")
           .attr("xlink:href", imgUrl)
@@ -100,7 +101,7 @@ export const useAppleTreeStore = defineStore("appleTree", {
       const imgUrl = new URL("../assets/simple-apple.svg", import.meta.url)
         .href;
       for (let i = 0; i < 10; i++) {
-        let basket_apple = d3
+        const basket_apple = d3
           .select("#basket_apples")
           .append("svg:image")
           .attr("xlink:href", imgUrl)
