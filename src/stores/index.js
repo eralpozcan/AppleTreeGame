@@ -74,6 +74,7 @@ export const useAppleTreeStore = defineStore("appleTree", {
       if(this.yPosValue[i] < 340) {
         return this.randomInt(750, 1150);
       }
+      return this.randomInt(750, 1150);
     },
     // Tree Random Seed yPos
     treeYPos(i) {
