@@ -1,6 +1,6 @@
 <script setup>
 import AppleTree from '@/components/icons/AppleTree.vue'
-import { useAppleTreeStore } from '../stores/index'
+import { useAppleTreeStore } from '@/stores/index'
 const appleStore = useAppleTreeStore()
 
 </script>

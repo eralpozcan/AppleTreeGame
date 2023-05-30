@@ -1,13 +1,13 @@
 <script setup>
 import Basket from "@/components/icons/Basket.vue";
-import { useAppleTreeStore } from "../stores/index";
+import { useAppleTreeStore } from "@/stores/index";
 const appleStore = useAppleTreeStore();
 </script>
 
 <template>
   <div class="basket" @contextmenu.prevent>
     <svg v-show="appleStore.appleIsGroundStatus" id="basket_apples" class="basket_apple"></svg>
-    <Basket class="basket-icon"></Basket>
+    <Basket class="basket-icon" />
   </div>
 </template>
 
