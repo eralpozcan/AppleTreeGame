@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from "vue";
-import { useAppleTreeStore } from "../stores/index";
+import { useAppleTreeStore } from "@/stores/index";
 const appleStore = useAppleTreeStore();
 
 onMounted(() => {
@@ -10,12 +10,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <svg
-    v-show="!appleStore.appleIsGroundStatus"
-    id="apples"
-    class="red-apple"
-    :class="{ shake: appleStore.shackingStatus }"
-  ></svg>
+  <svg v-show="!appleStore.appleIsGroundStatus" id="apples" class="red-apple"
+    :class="{ shake: appleStore.shackingStatus }"></svg>
 </template>
 
 <style scoped>

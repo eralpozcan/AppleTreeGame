@@ -1,8 +1,8 @@
-<script setup lang="js">
-import router from "../router";
+<script setup>
+import router from "@/router/index.js";
 
 function GoBackHome() {
-  router.push({ path: "/" });
+  router.push({ name: "Home" });
 }
 </script>
 

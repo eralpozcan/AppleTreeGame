@@ -1,6 +1,6 @@
 <script setup>
-import { useAppleTreeStore } from "../stores/index";
-import router from "../router";
+import { useAppleTreeStore } from "@/stores/index";
+import router from "@/router/index.js";
 const appleStore = useAppleTreeStore();
 
 function playNow() {

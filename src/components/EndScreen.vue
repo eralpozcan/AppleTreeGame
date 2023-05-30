@@ -1,15 +1,14 @@
 <script setup>
 import { useAppleTreeStore } from "../stores/index";
-import router from "../router";
+import router from "@/router/index.js";
 const appleStore = useAppleTreeStore();
 
 function resetNow() {
-
   appleStore.setAppleIsGroundStatus(false);
   appleStore.setPlayingStatus(false);
   appleStore.setAppleIsBasketStatus(false);
 
-  router.push({ name: "home" });
+  router.push({ name: "Home" });
 }
 </script>
 
