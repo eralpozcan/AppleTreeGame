@@ -7,7 +7,7 @@ const appleStore = useAppleTreeStore()
 
 <template>
   <div :class="{ shake: appleStore.shackingStatus }" @contextmenu.prevent>
-    <AppleTree class="apple-tree" @click="appleStore.shakeTree()"></AppleTree>
+    <AppleTree class="apple-tree" @click="appleStore.shakeTree()" />
   </div>
 </template>
 

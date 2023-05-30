@@ -4,11 +4,9 @@ import router from "../router";
 const appleStore = useAppleTreeStore();
 
 function resetNow() {
-
   appleStore.setAppleIsGroundStatus(false);
   appleStore.setPlayingStatus(false);
   appleStore.setAppleIsBasketStatus(false);
-
   router.push({ name: "home" });
 }
 </script>
