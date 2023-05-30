@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import router from "../router";
 
 function GoBackHome() {

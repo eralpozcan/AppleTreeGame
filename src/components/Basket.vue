@@ -1,16 +1,13 @@
 <script setup>
+import Basket from "@/components/icons/Basket.vue";
 import { useAppleTreeStore } from "../stores/index";
 const appleStore = useAppleTreeStore();
 </script>
 
 <template>
   <div class="basket" @contextmenu.prevent>
-    <svg
-      v-show="appleStore.appleIsGroundStatus"
-      id="basket_apples"
-      class="basket_apple"
-    ></svg>
-    <img src="../assets/basket.svg" width="200" height="200" alt="Apple Tree" />
+    <svg v-show="appleStore.appleIsGroundStatus" id="basket_apples" class="basket_apple"></svg>
+    <Basket class="basket-icon"></Basket>
   </div>
 </template>
 
@@ -20,6 +17,12 @@ const appleStore = useAppleTreeStore();
   bottom: 0;
   left: 75%;
   z-index: 1;
+}
+
+.basket-icon {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
 }
 
 .basket_apple {
